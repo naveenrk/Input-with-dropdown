@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <meta charset="utf-8">
+  <title>Input field with dropdown</title>
+</head>
+<body>
+   <div>
+        <input type='text' readonly="readonly" class="dropInput" placeholder ='click here'/>
+            <ul class="inputDrop">
+                <li>
+                    <div><label><input type="checkbox">abc</label></div>
+                </li>
+                <li>
+                    <div><label><input type="checkbox">abc</label></div>
+                </li>
+                <li>
+                    <div><label><input type="checkbox">abc</label></div>
+                </li>
+                <li>
+                    <div><label><input type="checkbox">abc</label></div>
+                </li>
+            </ul>
+    </div>
+</body>
+<script>
+	$('.inputDrop').hide();
+    $('.dropInput').click(function(e){
+        e.stopPropagation();
+        $('.inputDrop').slideToggle();
+    });
+    $('.inputDrop').click(function(e){
+        e.stopPropagation();
+    });
+
+    $(document).click(function(){
+        $('.inputDrop').slideUp();
+    });
+</script>
+</html>
